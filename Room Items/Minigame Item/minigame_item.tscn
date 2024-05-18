@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfh7n7img6rqt"]
+[gd_scene load_steps=6 format=3 uid="uid://cfh7n7img6rqt"]
 
 [ext_resource type="Script" path="res://Room Items/Minigame Item/minigame_item.gd" id="1_5ap0h"]
 [ext_resource type="Script" path="res://addons/input_prompts/action_prompt/action_prompt.gd" id="2_dgvr2"]
 [ext_resource type="Texture2D" uid="uid://by5dnx4caclqs" path="res://icon.svg" id="2_xn72s"]
-[ext_resource type="PackedScene" uid="uid://y8qe53ebuooi" path="res://Player/player.tscn" id="4_aeei1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_057d2"]
 
@@ -39,8 +38,6 @@ script = ExtResource("2_dgvr2")
 action = "interact"
 icon = 0
 events = Array[InputEvent]([SubResource("InputEventKey_d4sw7")])
-
-[node name="Player" parent="." instance=ExtResource("4_aeei1")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
