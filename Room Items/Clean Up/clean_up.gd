@@ -42,7 +42,7 @@ func _unhandled_input(event):
 		color_2.a=0
 		tween.tween_property(sprite, "modulate", color_2, 3)
 		tween2.tween_property($ActionPrompt/ProgressBar, "value", 100, 3)
-	if event.is_action_released("clean"):
+	if event.is_action_released("clean") && cleaning:
 		$ActionPrompt/ProgressBar.hide()
 		cleaning=false
 		timer.stop()
@@ -64,3 +64,6 @@ func _on_body_exited(body):
 
 func _on_cleaned():
 	queue_free()
+
+func get_mess() -> float:
+	return texture.get_width()/20*scale.x+texture.get_height()/20*scale.y

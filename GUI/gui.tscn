@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2jdnpef1nk4p"]
+[gd_scene load_steps=3 format=3 uid="uid://c2jdnpef1nk4p"]
 
 [ext_resource type="Script" path="res://GUI/gui.gd" id="1_is1en"]
+[ext_resource type="Script" path="res://GUI/main_menu.gd" id="2_68vs1"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -11,7 +12,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_is1en")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Main Menu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_68vs1")
+
+[node name="ColorRect" type="ColorRect" parent="Main Menu"]
 z_index = -5
 layout_mode = 0
 offset_right = 1153.0
@@ -19,40 +26,40 @@ offset_bottom = 650.0
 mouse_filter = 2
 color = Color(0.111197, 0.111197, 0.111197, 1)
 
-[node name="TitleCard" type="Label" parent="."]
+[node name="TitleCard" type="Label" parent="Main Menu"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -515.5
-offset_right = 515.5
+offset_left = 40.5
+offset_right = 1071.5
 offset_bottom = 194.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.486275, 0, 0, 1)
 theme_override_font_sizes/font_size = 200
 text = "Hide the Body!"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.5
-offset_top = -64.0
-offset_right = 125.5
-offset_bottom = 64.0
+offset_left = 430.5
+offset_top = 240.0
+offset_right = 681.5
+offset_bottom = 368.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="NewGame" type="Button" parent="VBoxContainer"]
+[node name="NewGame" type="Button" parent="Main Menu/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Play"
 
-[node name="MenuButton" type="MenuButton" parent="VBoxContainer"]
+[node name="MenuButton" type="MenuButton" parent="Main Menu/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "How To Play"
@@ -60,7 +67,7 @@ item_count = 1
 popup/item_0/text = "Movement:W,A,S,D or Arrow Keys"
 popup/item_0/id = 0
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/MenuButton"]
+[node name="ColorRect" type="ColorRect" parent="Main Menu/VBoxContainer/MenuButton"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 8
@@ -77,4 +84,17 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(0.176471, 0.176471, 0.176471, 1)
 
-[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -177.5
+offset_right = 177.5
+offset_bottom = 97.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "Get Ready!"
+
+[connection signal="new_game" from="Main Menu" to="." method="_on_main_menu_new_game"]
+[connection signal="pressed" from="Main Menu/VBoxContainer/NewGame" to="Main Menu" method="_on_new_game_pressed"]

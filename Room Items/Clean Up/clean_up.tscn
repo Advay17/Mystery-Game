@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckf7ew2b7bnua"]
+[gd_scene load_steps=6 format=3 uid="uid://ckf7ew2b7bnua"]
 
 [ext_resource type="Script" path="res://Room Items/Clean Up/clean_up.gd" id="1_17vwv"]
 [ext_resource type="Texture2D" uid="uid://bhin1y70m1q8g" path="res://Room Items/Clean Up/blood stain.png" id="2_qcmka"]
 [ext_resource type="Script" path="res://addons/input_prompts/action_prompt/action_prompt.gd" id="3_8wdvd"]
-[ext_resource type="PackedScene" uid="uid://y8qe53ebuooi" path="res://Player/player.tscn" id="4_5wkbx"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_gk4m5"]
 ctrl_pressed = true
@@ -14,13 +13,11 @@ unicode = 69
 command_or_control_autoremap = true
 keycode = 4194321
 
-[node name="CleanUp" type="Area2D"]
+[node name="CleanUp" type="Area2D" groups=["mess"]]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_17vwv")
 texture = ExtResource("2_qcmka")
-
-[node name="Player" parent="." instance=ExtResource("4_5wkbx")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qcmka")
@@ -51,9 +48,11 @@ polygon = PackedVector2Array(62, 167.1, 63.4, 170.5, 66.8, 170.5, 70, 173.7, 70,
 
 [node name="ActionPrompt" type="TextureRect" parent="."]
 visible = false
+z_index = 1
 offset_left = 200.0
 offset_right = 240.0
 offset_bottom = 40.0
+scale = Vector2(10, 10)
 stretch_mode = 5
 script = ExtResource("3_8wdvd")
 action = "ui_text_caret_line_end.macos"
@@ -69,8 +68,6 @@ offset_bottom = -5.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
