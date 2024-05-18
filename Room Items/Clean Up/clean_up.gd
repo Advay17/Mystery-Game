@@ -20,7 +20,6 @@ func _ready():
 	for i in hit_array:
 		var p=CollisionPolygon2D.new()
 		p.polygon=i
-		print(image.get_width()/2)
 		p.position.x-=image.get_width()/2
 		p.position.y-=image.get_height()/2
 		add_child(p)

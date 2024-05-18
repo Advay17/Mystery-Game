@@ -24,6 +24,10 @@ PromptManager="*res://addons/input_prompts/input_prompt_manager.gd"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[dotnet]
+
+project/assembly_name="Mystery Game"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/input_prompts/plugin.cfg")

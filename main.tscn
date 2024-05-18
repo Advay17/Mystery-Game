@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw7dve6qlomss"]
+[gd_scene load_steps=5 format=3 uid="uid://cw7dve6qlomss"]
 
-[ext_resource type="PackedScene" uid="uid://y8qe53ebuooi" path="res://Player/player.tscn" id="1_8h5fj"]
 [ext_resource type="Script" path="res://main.gd" id="1_jt5uk"]
 [ext_resource type="PackedScene" uid="uid://c2jdnpef1nk4p" path="res://GUI/gui.tscn" id="1_mpskb"]
 [ext_resource type="PackedScene" uid="uid://73xsf34vfbl" path="res://Tilemap/tile_map.tscn" id="2_38msn"]
@@ -8,11 +7,6 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jt5uk")
-
-[node name="Player" parent="." instance=ExtResource("1_8h5fj")]
-visible = false
-position = Vector2(114, 152)
-scale = Vector2(0.25, 0.25)
 
 [node name="TileMap" parent="." instance=ExtResource("2_38msn")]
 visible = false
@@ -25,6 +19,15 @@ position = Vector2(302, 219)
 scale = Vector2(0.1, 0.1)
 
 [node name="GUI" parent="." instance=ExtResource("1_mpskb")]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(147, 224)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 300.0
 
 [connection signal="game_started" from="GUI" to="." method="_on_game_started"]
 [connection signal="load" from="GUI" to="." method="_on_gui_load"]
+[connection signal="child_entered_tree" from="Timer" to="GUI" method="_on_timer_child_entered_tree"]

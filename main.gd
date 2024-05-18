@@ -1,5 +1,5 @@
 extends Node2D
-
+@onready var timer=$Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,4 +20,8 @@ func _on_gui_load():
 func _on_game_started():
 	var player_scene:=load("res://Player/player.tscn")
 	var player=player_scene.instantiate()
+	player.scale*=0.25
+	player.position=$Marker2D.position
+	add_child(player)
+	timer.start()
 	

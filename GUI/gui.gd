@@ -1,5 +1,6 @@
 extends Control
 @onready var label_color=$Label.modulate
+var timer:Timer
 signal game_started
 signal load
 # Called when the node enters the scene tree for the first time.
@@ -9,11 +10,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if timer:
+		display_time()
 
+func display_time():
+	var timer_label:Label=$Timer
+	var minutes=round(timer.time_left/60)
+	var seconds=round(fmod(timer.time_left, 60))
+	timer_label.text="%02d:%02d" % [minutes, seconds]
 
 func _on_main_menu_new_game():
-	print("runs")
 	load.emit()
 	$Label.show()
 	var tween=get_tree().create_tween()
@@ -30,3 +36,5 @@ func _on_main_menu_new_game():
 	tween.tween_property($Label, "modulate", c, 0.5)
 	await tween.finished
 	game_started.emit()
+	timer=get_parent().timer
+	$Timer.show()

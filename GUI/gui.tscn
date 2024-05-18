@@ -12,10 +12,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_is1en")
 
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+offset_left = 398.5
+offset_right = 753.5
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 100
+text = "Get Ready!"
+horizontal_alignment = 1
+
+[node name="Timer" type="Label" parent="."]
+visible = false
+layout_mode = 1
+offset_left = 517.5
+offset_right = 634.5
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 60
+text = "10:50"
+
 [node name="Main Menu" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1150.0
+offset_bottom = 648.0
 script = ExtResource("2_68vs1")
 
 [node name="ColorRect" type="ColorRect" parent="Main Menu"]
@@ -31,13 +50,15 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 40.5
-offset_right = 1071.5
-offset_bottom = 194.0
+offset_left = -572.0
+offset_right = 572.0
+offset_bottom = 391.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.486275, 0, 0, 1)
-theme_override_font_sizes/font_size = 200
-text = "Hide the Body!"
+theme_override_font_sizes/font_size = 145
+text = "Dead Men Tell no Tales"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main Menu"]
 layout_mode = 1
@@ -46,10 +67,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 430.5
-offset_top = 240.0
-offset_right = 681.5
-offset_bottom = 368.0
+offset_left = -125.5
+offset_top = 26.0
+offset_right = 125.5
+offset_bottom = 154.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -63,9 +84,13 @@ text = "Play"
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "How To Play"
-item_count = 1
+item_count = 3
 popup/item_0/text = "Movement:W,A,S,D or Arrow Keys"
 popup/item_0/id = 0
+popup/item_1/text = "Interact:E"
+popup/item_1/id = 1
+popup/item_2/text = "Clean Spills:Q"
+popup/item_2/id = 2
 
 [node name="ColorRect" type="ColorRect" parent="Main Menu/VBoxContainer/MenuButton"]
 z_index = -1
@@ -84,17 +109,22 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(0.176471, 0.176471, 0.176471, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="Background" type="Label" parent="Main Menu"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -177.5
-offset_right = 177.5
-offset_bottom = 97.0
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -59.0
+offset_right = 576.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 100
-text = "Get Ready!"
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "Welp, your friend is dead, and you're holding the knife that killed him. Howver, it seems that you don't really want to be arrested. Looks like some cleanup is needed on aisle-your friend's house. Clock's ticking..."
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [connection signal="new_game" from="Main Menu" to="." method="_on_main_menu_new_game"]
 [connection signal="pressed" from="Main Menu/VBoxContainer/NewGame" to="Main Menu" method="_on_new_game_pressed"]
