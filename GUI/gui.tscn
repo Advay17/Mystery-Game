@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c2jdnpef1nk4p"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -5
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 650.0
+mouse_filter = 2
+color = Color(0.111197, 0.111197, 0.111197, 1)
+
+[node name="TitleCard" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -515.5
+offset_right = 515.5
+offset_bottom = 194.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.486275, 0, 0, 1)
+theme_override_font_sizes/font_size = 200
+text = "Hide the Body!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.5
+offset_top = -64.0
+offset_right = 125.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="NewGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="MenuButton" type="MenuButton" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "How To Play"
+item_count = 1
+popup/item_0/text = "Movement:W,A,S,D or Arrow Keys"
+popup/item_0/id = 0
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/MenuButton"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.5
+offset_top = -33.5
+offset_right = 126.5
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.176471, 0.176471, 0.176471, 1)
