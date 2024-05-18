@@ -13,7 +13,7 @@ extends "res://addons/input_prompts/input_prompt.gd"
 ## recent input device.
 
 ## The name of an action registered in the [InputMap].
-var action := "ui_accept":
+var action := "up":
 	set = _set_action
 
 ## The icon preference for this prompt:

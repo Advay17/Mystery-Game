@@ -1,8 +1,46 @@
-[gd_scene format=3 uid="uid://cfh7n7img6rqt"]
+[gd_scene load_steps=7 format=3 uid="uid://cfh7n7img6rqt"]
+
+[ext_resource type="Script" path="res://Room Items/Minigame Item/minigame_item.gd" id="1_5ap0h"]
+[ext_resource type="Script" path="res://addons/input_prompts/action_prompt/action_prompt.gd" id="2_dgvr2"]
+[ext_resource type="Texture2D" uid="uid://by5dnx4caclqs" path="res://icon.svg" id="2_xn72s"]
+[ext_resource type="PackedScene" uid="uid://y8qe53ebuooi" path="res://Player/player.tscn" id="4_aeei1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_057d2"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_d4sw7"]
+device = -1
+physical_keycode = 69
+unicode = 101
 
 [node name="Minigame Item" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_5ap0h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xn72s")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_057d2")
+
+[node name="ActionPrompt" type="TextureRect" parent="Area2D"]
+offset_left = 68.0
+offset_top = -54.0
+offset_right = 108.0
+offset_bottom = -14.0
+stretch_mode = 5
+script = ExtResource("2_dgvr2")
+action = "interact"
+icon = 0
+events = Array[InputEvent]([SubResource("InputEventKey_d4sw7")])
+
+[node name="Player" parent="." instance=ExtResource("4_aeei1")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

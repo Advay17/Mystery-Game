@@ -10,7 +10,13 @@ func _ready():
 	var default_sprite:=sprite.sprite_frames.get_frame_texture("default", 0).get_image()
 	var bitmap:=BitMap.new()
 	bitmap.create_from_image_alpha(default_sprite)
-	hitbox.polygon=bitmap.opaque_to_polygons(Rect2(Vector2(), bitmap.get_size()))
+	var array=bitmap.opaque_to_polygons(Rect2(Vector2(), bitmap.get_size()))
+	for i in array:
+		var p=CollisionPolygon2D.new()
+		p.polygon=i
+		p.position.x-=default_sprite.get_width()/2
+		p.position.y-=default_sprite.get_height()/2
+		add_child(p)
 	pass # Replace with function body.
 
 

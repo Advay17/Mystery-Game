@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuxab6psslcll"]
+
+[ext_resource type="Script" path="res://Window.gd" id="1_gbggu"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_oyyto"]
+
+[node name="Window" type="Window"]
+size = Vector2i(1000, 1000)
+content_scale_mode = 1
+theme_override_icons/close = SubResource("Texture2DRD_oyyto")
+script = ExtResource("1_gbggu")

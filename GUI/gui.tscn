@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c2jdnpef1nk4p"]
+[gd_scene load_steps=2 format=3 uid="uid://c2jdnpef1nk4p"]
+
+[ext_resource type="Script" path="res://GUI/gui.gd" id="1_is1en"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_is1en")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -5
@@ -73,3 +76,5 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 color = Color(0.176471, 0.176471, 0.176471, 1)
+
+[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
