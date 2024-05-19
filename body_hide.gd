@@ -14,6 +14,7 @@ func _process(delta):
 
 func _on_action_prompt_pressed():
 	if has_overlapping_bodies() and get_node("../TileMap/Corpse").dragged:
+		get_node("../TileMap/Corpse").dragged=false
 		get_node("../TileMap/Corpse").queue_free()
 		get_parent().body_hidden=true
 		get_tree().call_group("bh", "queue_free")

@@ -12,6 +12,7 @@ func _ready():
 func _process(delta):
 	if timer:
 		display_time()
+		$ProgressBar.max_value=get_parent().clean_max
 		$ProgressBar.value=get_parent().cleaned
 
 func display_time():

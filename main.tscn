@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cw7dve6qlomss"]
+[gd_scene load_steps=22 format=3 uid="uid://cw7dve6qlomss"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_jt5uk"]
 [ext_resource type="PackedScene" uid="uid://c2jdnpef1nk4p" path="res://GUI/gui.tscn" id="1_mpskb"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ceyccqpsuxj0c" path="res://Room Items/Corpse/corpse.tscn" id="5_euct4"]
 [ext_resource type="Curve2D" uid="uid://dv1nnmuac64vh" path="res://Room Items/spawn_curve.tres" id="5_hib2s"]
 [ext_resource type="PackedScene" uid="uid://dl7cbim3pse3b" path="res://Room Items/Falling Decorations/falling_decoration.tscn" id="6_flrct"]
+[ext_resource type="SpriteFrames" uid="uid://bqwm5n54fk8tv" path="res://Room Items/Falling Decorations/glass.tres" id="7_sf1wh"]
+[ext_resource type="SpriteFrames" uid="uid://ch6o2lmdrlum3" path="res://Room Items/Falling Decorations/mirror.tres" id="8_ccwsi"]
 [ext_resource type="Script" path="res://ExcapeLocation.gd" id="8_coptb"]
 [ext_resource type="Script" path="res://addons/input_prompts/action_prompt/action_prompt.gd" id="9_e661t"]
 [ext_resource type="Script" path="res://escape_screen.gd" id="9_h6xa5"]
@@ -503,15 +505,19 @@ texture = ExtResource("2_pt7bv")
 0:9/0 = 0
 0:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:9/0/physics_layer_0/angular_velocity = 0.0
+0:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:9/0 = 0
 1:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:9/0/physics_layer_0/angular_velocity = 0.0
+1:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:9/0 = 0
 2:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:9/0/physics_layer_0/angular_velocity = 0.0
+2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:9/0 = 0
 3:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:9/0/physics_layer_0/angular_velocity = 0.0
+3:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:9/0 = 0
 4:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:9/0/physics_layer_0/angular_velocity = 0.0
@@ -524,12 +530,15 @@ texture = ExtResource("2_pt7bv")
 7:9/0 = 0
 7:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:9/0/physics_layer_0/angular_velocity = 0.0
+7:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:9/0 = 0
 8:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:9/0/physics_layer_0/angular_velocity = 0.0
+8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:9/0 = 0
 9:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:9/0/physics_layer_0/angular_velocity = 0.0
+9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:9/0 = 0
 11:9/0/terrain_set = 0
 11:9/0/terrain = 2
@@ -557,24 +566,31 @@ texture = ExtResource("2_pt7bv")
 0:10/0 = 0
 0:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:10/0/physics_layer_0/angular_velocity = 0.0
+0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:10/0 = 0
 1:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:10/0/physics_layer_0/angular_velocity = 0.0
+1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:10/0 = 0
 2:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:10/0/physics_layer_0/angular_velocity = 0.0
+2:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:10/0 = 0
 3:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:10/0/physics_layer_0/angular_velocity = 0.0
+3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:10/0 = 0
 7:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:10/0/physics_layer_0/angular_velocity = 0.0
+7:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 8:10/0 = 0
 8:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:10/0/physics_layer_0/angular_velocity = 0.0
+8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:10/0 = 0
 9:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:10/0/physics_layer_0/angular_velocity = 0.0
+9:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:10/0 = 0
 11:10/0/terrain_set = 0
 11:10/0/terrain = 2
@@ -3374,7 +3390,7 @@ sources/2 = SubResource("TileSetAtlasSource_1tymm")
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjies"]
 radius = 41.7732
 
-[sub_resource type="InputEventKey" id="InputEventKey_1y3di"]
+[sub_resource type="InputEventKey" id="InputEventKey_gu4bt"]
 device = -1
 physical_keycode = 69
 unicode = 101
@@ -3423,7 +3439,19 @@ position = Vector2(96, 123)
 rotation = 1.75065
 
 [node name="FallingDecoration" parent="TileMap" instance=ExtResource("6_flrct")]
-position = Vector2(185, 122)
+position = Vector2(994, 223)
+
+[node name="FallingDecoration2" parent="TileMap" instance=ExtResource("6_flrct")]
+position = Vector2(755, 431)
+spriteframes = ExtResource("7_sf1wh")
+
+[node name="FallingDecoration3" parent="TileMap" instance=ExtResource("6_flrct")]
+position = Vector2(137, 162)
+spriteframes = ExtResource("7_sf1wh")
+
+[node name="FallingDecoration4" parent="TileMap" instance=ExtResource("6_flrct")]
+position = Vector2(284, 100)
+spriteframes = ExtResource("8_ccwsi")
 
 [node name="GUI" parent="." instance=ExtResource("1_mpskb")]
 size_flags_horizontal = 4
@@ -3466,7 +3494,7 @@ stretch_mode = 5
 script = ExtResource("9_e661t")
 action = "interact"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_1y3di")])
+events = Array[InputEvent]([SubResource("InputEventKey_gu4bt")])
 
 [node name="Area2D1" type="Area2D" parent="EscapeLocation"]
 visible = false
@@ -3616,7 +3644,7 @@ stretch_mode = 5
 script = ExtResource("9_e661t")
 action = "interact"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_1y3di")])
+events = Array[InputEvent]([SubResource("InputEventKey_gu4bt")])
 
 [node name="BodyHide2" type="Area2D" parent="." groups=["bh"]]
 position = Vector2(884, 495)
@@ -3639,7 +3667,7 @@ stretch_mode = 5
 script = ExtResource("9_e661t")
 action = "interact"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_1y3di")])
+events = Array[InputEvent]([SubResource("InputEventKey_gu4bt")])
 
 [node name="BodyHide3" type="Area2D" parent="." groups=["bh"]]
 z_index = 4
@@ -3663,7 +3691,7 @@ stretch_mode = 5
 script = ExtResource("9_e661t")
 action = "interact"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_1y3di")])
+events = Array[InputEvent]([SubResource("InputEventKey_gu4bt")])
 
 [connection signal="game_started" from="GUI" to="." method="_on_game_started"]
 [connection signal="load" from="GUI" to="." method="_on_gui_load"]

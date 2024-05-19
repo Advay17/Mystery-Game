@@ -23,13 +23,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(get_contact_count()>0):
-		print("yes")
+	pass
 
 # Collision logic
 func _on_body_entered(body):
 	broken=true
-	print("runs")
 	sprite.play("falling")
 	await sprite.animation_looped
 	sprite.play("broken")

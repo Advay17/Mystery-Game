@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://by5dnx4caclqs" path="res://icon.svg" id="2_aufw6"]
 [ext_resource type="Script" path="res://addons/input_prompts/action_prompt/action_prompt.gd" id="3_43frb"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_dmejh"]
+[sub_resource type="InputEventKey" id="InputEventKey_rgmul"]
 device = -1
 physical_keycode = 70
 unicode = 102
@@ -29,7 +29,7 @@ stretch_mode = 5
 script = ExtResource("3_43frb")
 action = "grab"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_dmejh")])
+events = Array[InputEvent]([SubResource("InputEventKey_rgmul")])
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
@@ -41,5 +41,9 @@ shape = SubResource("CircleShape2D_7x5t8")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
