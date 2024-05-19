@@ -12,6 +12,7 @@ func _ready():
 func _process(delta):
 	if timer:
 		display_time()
+		$ProgressBar.value=get_parent().cleaned
 
 func display_time():
 	var timer_label:Label=$Timer
@@ -38,6 +39,7 @@ func _on_main_menu_new_game():
 	game_started.emit()
 	timer=get_parent().timer
 	$Timer.show()
+	$ProgressBar.max_value=get_parent().clean_max
 
 func timer_flash():
 	var timer_label:Timer=$Timer

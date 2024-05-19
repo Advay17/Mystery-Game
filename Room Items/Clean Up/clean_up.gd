@@ -6,6 +6,7 @@ var cleaning:=false
 var tween:Tween
 var tween2:Tween
 var color
+signal cleaned(mess:float)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var name:="CollisionPolygon2D"
@@ -62,6 +63,7 @@ func _on_body_exited(body):
 	pass # Replace with function body.
 
 func _on_cleaned():
+	cleaned.emit(get_mess())
 	queue_free()
 
 func get_mess() -> float:

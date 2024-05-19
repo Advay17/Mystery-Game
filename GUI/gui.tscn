@@ -126,5 +126,12 @@ text = "Well, your friend is dead, and you're holding the knife that killed him.
 horizontal_alignment = 1
 autowrap_mode = 3
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_top = 76.0
+offset_right = 1153.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 40
+
 [connection signal="new_game" from="Main Menu" to="." method="_on_main_menu_new_game"]
 [connection signal="pressed" from="Main Menu/VBoxContainer/NewGame" to="Main Menu" method="_on_new_game_pressed"]
