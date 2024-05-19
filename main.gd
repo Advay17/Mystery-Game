@@ -39,6 +39,7 @@ func _on_game_started():
 	var player=player_scene.instantiate()
 	player.position=$Marker2D.position
 	add_child(player)
+	$AudioStreamPlayer.play()
 	timer.start(clean_max)
 
 func time_loss(time:int):

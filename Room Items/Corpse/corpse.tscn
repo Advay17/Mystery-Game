@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ceyccqpsuxj0c"]
 
 [ext_resource type="Script" path="res://Room Items/Corpse/corpse.gd" id="1_77mm6"]
-[ext_resource type="Texture2D" uid="uid://by5dnx4caclqs" path="res://icon.svg" id="2_aufw6"]
+[ext_resource type="Texture2D" uid="uid://duhwuqsa25pxt" path="res://New Piskel (5).png" id="2_ojvyd"]
 [ext_resource type="Script" path="res://addons/input_prompts/action_prompt/action_prompt.gd" id="3_43frb"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_rgmul"]
@@ -14,17 +14,17 @@ unicode = 102
 [node name="Corpse" type="CharacterBody2D"]
 collision_layer = 16
 collision_mask = 7
+motion_mode = 1
 script = ExtResource("1_77mm6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_aufw6")
+texture = ExtResource("2_ojvyd")
 
 [node name="ActionPrompt" type="TextureRect" parent="."]
-visible = false
-offset_left = 71.0
-offset_top = -54.0
-offset_right = 188.0
-offset_bottom = 66.0
+offset_left = 33.0
+offset_top = -15.0
+offset_right = 56.0
+offset_bottom = 10.0
 stretch_mode = 5
 script = ExtResource("3_43frb")
 action = "grab"
@@ -38,11 +38,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_7x5t8")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(64, -59.6, 64, 59, 59.6, 64, -59, 64, -64, 59.6, -64, -59.6, -59, -63.9, 59, -64)
-
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0.799999, -10, 6.4, -10, 15, -6.3, 15, -1, 16, 6.7, 16, 9, 13.6, 9, 10.1, 11.3, 8, 10.2, 8, 8.5, 5.9, 5, 4.7, 5.3, 7.3, 8.8, 6.2, 11, 4.6, 11, 1.1, 13.3, -1, 12.2, -1, 10.7, -5.9, 5, -7.3, 5, -16, 2.5, -16, -7.3, -10.3, -9.7, -12, -10.9, -12, -15.2, -10.4, -16, -5.1, -16)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
