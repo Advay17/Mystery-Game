@@ -37,13 +37,12 @@ func _on_gui_load():
 func _on_game_started():
 	var player_scene:=load("res://Player/player.tscn")
 	var player=player_scene.instantiate()
-	player.scale*=0.25
 	player.position=$Marker2D.position
 	add_child(player)
 	timer.start(clean_max)
 
 func time_loss(time:int):
-	timer.start(timer.time_left)
+	timer.start(timer.time_left-time)
 	$GUI.timer_flash()
 	pass
 

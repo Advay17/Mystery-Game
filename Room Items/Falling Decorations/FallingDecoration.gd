@@ -18,15 +18,18 @@ func _ready():
 		p.position.x-=default_sprite.get_width()/2
 		p.position.y-=default_sprite.get_height()/2
 		add_child(p)
-	connect("time_loss", get_parent().time_loss)
+	connect("time_loss", get_parent().get_parent().time_loss)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if(get_contact_count()>0):
+		print("yes")
 
 # Collision logic
 func _on_body_entered(body):
+	broken=true
+	print("runs")
 	sprite.play("falling")
 	await sprite.animation_looped
 	sprite.play("broken")

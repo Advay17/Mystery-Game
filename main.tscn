@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cw7dve6qlomss"]
+[gd_scene load_steps=20 format=3 uid="uid://cw7dve6qlomss"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_jt5uk"]
 [ext_resource type="PackedScene" uid="uid://c2jdnpef1nk4p" path="res://GUI/gui.tscn" id="1_mpskb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dffxcre2jv48g" path="res://Tilemap/Interiors_free/16x16/Interiors_free_16x16.png" id="3_5woii"]
 [ext_resource type="PackedScene" uid="uid://ceyccqpsuxj0c" path="res://Room Items/Corpse/corpse.tscn" id="5_euct4"]
 [ext_resource type="Curve2D" uid="uid://dv1nnmuac64vh" path="res://Room Items/spawn_curve.tres" id="5_hib2s"]
+[ext_resource type="PackedScene" uid="uid://dl7cbim3pse3b" path="res://Room Items/Falling Decorations/falling_decoration.tscn" id="6_flrct"]
 [ext_resource type="Script" path="res://ExcapeLocation.gd" id="8_coptb"]
 [ext_resource type="Script" path="res://addons/input_prompts/action_prompt/action_prompt.gd" id="9_e661t"]
 [ext_resource type="Script" path="res://escape_screen.gd" id="9_h6xa5"]
@@ -3420,6 +3421,9 @@ curve = ExtResource("5_hib2s")
 [node name="CorpsePosition" type="PathFollow2D" parent="TileMap/Path2D"]
 position = Vector2(96, 123)
 rotation = 1.75065
+
+[node name="FallingDecoration" parent="TileMap" instance=ExtResource("6_flrct")]
+position = Vector2(185, 122)
 
 [node name="GUI" parent="." instance=ExtResource("1_mpskb")]
 size_flags_horizontal = 4

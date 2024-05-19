@@ -1,7 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://y8qe53ebuooi"]
+[gd_scene load_steps=7 format=3 uid="uid://y8qe53ebuooi"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_jtisb"]
-[ext_resource type="Texture2D" uid="uid://by5dnx4caclqs" path="res://icon.svg" id="2_wi3pr"]
+[ext_resource type="Texture2D" uid="uid://cyfbfb1idg1eb" path="res://Player/New Piskel (2).png" id="2_0t0xi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcjvx"]
+atlas = ExtResource("2_0t0xi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70or4"]
+atlas = ExtResource("2_0t0xi")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sexbq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcjvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70or4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xipso"]
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 2
@@ -10,8 +34,8 @@ collision_mask = 15
 motion_mode = 1
 script = ExtResource("1_jtisb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_wi3pr")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sexbq")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(64, -61.1, 64, 59, 59.6, 64, -60.2, 64, -64, 61, -64, 58, -64, -59, -59, -63.8, 59.2, -64)
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xipso")

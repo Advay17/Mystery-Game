@@ -1,35 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl7cbim3pse3b"]
 
 [ext_resource type="Script" path="res://Room Items/Falling Decorations/FallingDecoration.gd" id="1_oo1pn"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_e6ma7"]
-animations = [{
-"frames": [],
-"loop": true,
-"name": &"broken",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"falling",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://b5jqc1jg5b3rb" path="res://Room Items/Falling Decorations/vase.tres" id="2_plf4t"]
 
 [node name="FallingDecoration" type="RigidBody2D" groups=["time_loss"]]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 2
 gravity_scale = 0.0
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_oo1pn")
+spriteframes = ExtResource("2_plf4t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_e6ma7")
+sprite_frames = ExtResource("2_plf4t")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, 0, 0, 0, 0, 0)
