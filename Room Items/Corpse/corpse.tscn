@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://ceyccqpsuxj0c"]
+
+[ext_resource type="Script" path="res://Room Items/Corpse/corpse.gd" id="1_77mm6"]
+[ext_resource type="Texture2D" uid="uid://by5dnx4caclqs" path="res://icon.svg" id="2_aufw6"]
+[ext_resource type="Script" path="res://addons/input_prompts/action_prompt/action_prompt.gd" id="3_43frb"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_s6fwm"]
+device = -1
+physical_keycode = 70
+unicode = 102
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7x5t8"]
+
+[node name="Corpse" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 7
+collision_priority = 100.0
+script = ExtResource("1_77mm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_aufw6")
+
+[node name="ActionPrompt" type="TextureRect" parent="."]
+visible = false
+offset_left = 71.0
+offset_top = -54.0
+offset_right = 188.0
+offset_bottom = 66.0
+stretch_mode = 5
+script = ExtResource("3_43frb")
+action = "grab"
+icon = 0
+events = Array[InputEvent]([SubResource("InputEventKey_s6fwm")])
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7x5t8")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -122,7 +122,7 @@ offset_right = 576.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 20
-text = "Welp, your friend is dead, and you're holding the knife that killed him. Howver, it seems that you don't really want to be arrested. Looks like some cleanup is needed on aisle-your friend's house. Clock's ticking..."
+text = "Well, your friend is dead, and you're holding the knife that killed him. Howver, it seems that you don't really want to be arrested. Looks like some cleanup is needed on aisle-your friend's house. The police will inevitably arrive soon, and any mistakes you make will only speed that up. Clock's ticking..."
 horizontal_alignment = 1
 autowrap_mode = 3
 

@@ -41,7 +41,7 @@ func _unhandled_input(event):
 		color_2.a=0
 		tween.tween_property(sprite, "modulate", color_2, 3)
 		tween2.tween_property($ActionPrompt/ProgressBar, "value", 100, 3)
-	if event.is_action_released("clean") && cleaning:
+	if (event.is_action_released("clean") && cleaning) ||(cleaning && !has_overlapping_bodies()):
 		$ActionPrompt/ProgressBar.hide()
 		cleaning=false
 		timer.stop()

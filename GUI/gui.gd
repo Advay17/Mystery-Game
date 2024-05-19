@@ -38,3 +38,11 @@ func _on_main_menu_new_game():
 	game_started.emit()
 	timer=get_parent().timer
 	$Timer.show()
+
+func timer_flash():
+	var timer_label:Timer=$Timer
+	var c:Color=timer_label.modulate
+	timer_label.modulate=Color.DARK_RED
+	await get_tree().create_timer(0.5).timeout
+	var tween=get_tree()
+	tween.tween_property(timer_label, "modulate", c, 0.5)

@@ -24,4 +24,9 @@ func _on_game_started():
 	player.position=$Marker2D.position
 	add_child(player)
 	timer.start()
+
+func time_loss(time:int):
+	timer.time_left-=time
+	$GUI.timer_flash()
+	pass
 	

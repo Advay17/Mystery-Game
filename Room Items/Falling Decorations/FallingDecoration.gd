@@ -3,6 +3,7 @@ var broken:=false
 @export var spriteframes:SpriteFrames
 @onready var hitbox:CollisionPolygon2D=$CollisionPolygon2D
 @onready var sprite:AnimatedSprite2D=$AnimatedSprite2D
+signal time_loss(time:int)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sprite.sprite_frames=spriteframes
@@ -17,7 +18,7 @@ func _ready():
 		p.position.x-=default_sprite.get_width()/2
 		p.position.y-=default_sprite.get_height()/2
 		add_child(p)
-	pass # Replace with function body.
+	connect("time_loss", get_parent().time_loss)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,4 +30,5 @@ func _on_body_entered(body):
 	sprite.play("falling")
 	await sprite.animation_looped
 	sprite.play("broken")
+	time_loss.emit(5)
 	hitbox.queue_free()
