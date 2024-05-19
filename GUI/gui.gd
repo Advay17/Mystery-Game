@@ -16,8 +16,8 @@ func _process(delta):
 
 func display_time():
 	var timer_label:Label=$Timer
-	var minutes=round(timer.time_left/60)
-	var seconds=round(fmod(timer.time_left, 60))
+	var minutes=floor(timer.time_left/60)
+	var seconds=floor(fmod(timer.time_left, 60))
 	timer_label.text="%02d:%02d" % [minutes, seconds]
 
 func _on_main_menu_new_game():
