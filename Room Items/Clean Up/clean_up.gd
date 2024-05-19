@@ -35,13 +35,13 @@ func _unhandled_input(event):
 	if event.is_action_pressed("clean") && has_overlapping_bodies():
 		$ActionPrompt/ProgressBar.show()
 		cleaning=true
-		timer.start(3)
+		timer.start(get_mess())
 		tween=get_tree().create_tween()
 		tween2=get_tree().create_tween()
 		var color_2=color
 		color_2.a=0
-		tween.tween_property(sprite, "modulate", color_2, 3)
-		tween2.tween_property($ActionPrompt/ProgressBar, "value", 100, 3)
+		tween.tween_property(sprite, "modulate", color_2, get_mess())
+		tween2.tween_property($ActionPrompt/ProgressBar, "value", 100, get_mess())
 	if (event.is_action_released("clean") && cleaning) ||(cleaning && !has_overlapping_bodies()):
 		$ActionPrompt/ProgressBar.hide()
 		cleaning=false

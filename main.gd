@@ -1,7 +1,7 @@
 extends Node2D
 @onready var timer=$Timer
 var splatter=preload("res://Room Items/Clean Up/clean_up.tscn")
-var cleaned:int=0
+var cleaned:float=0
 var clean_max:float=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +19,7 @@ func _on_gui_load():
 	var corpse_position=$TileMap/Path2D/CorpsePosition
 	corpse_position.progress_ratio=randf()
 	$TileMap/Corpse.global_position=corpse_position.global_position
-	for i in range(randi()%30):
+	for i in range(randi_range(5, 30)):
 		var s=splatter.instantiate()
 		var sc=Vector2(randf_range(0.1, 0.2), randf_range(0.1, 0.2))
 		s.scale=sc

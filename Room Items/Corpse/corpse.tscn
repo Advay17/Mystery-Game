@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://by5dnx4caclqs" path="res://icon.svg" id="2_aufw6"]
 [ext_resource type="Script" path="res://addons/input_prompts/action_prompt/action_prompt.gd" id="3_43frb"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_s6fwm"]
+[sub_resource type="InputEventKey" id="InputEventKey_dmejh"]
 device = -1
 physical_keycode = 70
 unicode = 102
@@ -30,7 +30,7 @@ stretch_mode = 5
 script = ExtResource("3_43frb")
 action = "grab"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_s6fwm")])
+events = Array[InputEvent]([SubResource("InputEventKey_dmejh")])
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

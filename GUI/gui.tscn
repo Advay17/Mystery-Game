@@ -84,13 +84,15 @@ text = "Play"
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "How To Play"
-item_count = 3
+item_count = 4
 popup/item_0/text = "Movement:W,A,S,D or Arrow Keys"
 popup/item_0/id = 0
 popup/item_1/text = "Interact:E"
 popup/item_1/id = 1
 popup/item_2/text = "Clean Spills:Q"
 popup/item_2/id = 2
+popup/item_3/text = "Grab the Corpse:G"
+popup/item_3/id = 3
 
 [node name="ColorRect" type="ColorRect" parent="Main Menu/VBoxContainer/MenuButton"]
 z_index = -1
@@ -127,6 +129,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 76.0
 offset_right = 1153.0

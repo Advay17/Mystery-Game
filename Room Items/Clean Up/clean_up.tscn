@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://bhin1y70m1q8g" path="res://Room Items/Clean Up/blood stain.png" id="2_qcmka"]
 [ext_resource type="Script" path="res://addons/input_prompts/action_prompt/action_prompt.gd" id="3_8wdvd"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_hhfbb"]
+[sub_resource type="InputEventKey" id="InputEventKey_3y68w"]
 ctrl_pressed = true
 keycode = 69
 unicode = 69
 
-[sub_resource type="InputEventKey" id="InputEventKey_dlc7n"]
+[sub_resource type="InputEventKey" id="InputEventKey_4wpig"]
 command_or_control_autoremap = true
 keycode = 4194321
 
@@ -48,7 +48,7 @@ polygon = PackedVector2Array(62, 167.1, 63.4, 170.5, 66.8, 170.5, 70, 173.7, 70,
 
 [node name="ActionPrompt" type="TextureRect" parent="."]
 visible = false
-z_index = 1
+z_index = 4
 offset_left = 200.0
 offset_right = 240.0
 offset_bottom = 40.0
@@ -57,7 +57,7 @@ stretch_mode = 5
 script = ExtResource("3_8wdvd")
 action = "ui_text_caret_line_end.macos"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_hhfbb"), SubResource("InputEventKey_dlc7n")])
+events = Array[InputEvent]([SubResource("InputEventKey_3y68w"), SubResource("InputEventKey_4wpig")])
 
 [node name="ProgressBar" type="ProgressBar" parent="ActionPrompt"]
 visible = false

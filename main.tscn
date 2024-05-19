@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cw7dve6qlomss"]
+[gd_scene load_steps=15 format=3 uid="uid://cw7dve6qlomss"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_jt5uk"]
 [ext_resource type="PackedScene" uid="uid://c2jdnpef1nk4p" path="res://GUI/gui.tscn" id="1_mpskb"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ckf7ew2b7bnua" path="res://Room Items/Clean Up/clean_up.tscn" id="3_fegu7"]
 [ext_resource type="PackedScene" uid="uid://ceyccqpsuxj0c" path="res://Room Items/Corpse/corpse.tscn" id="5_euct4"]
 [ext_resource type="Curve2D" uid="uid://dv1nnmuac64vh" path="res://Room Items/spawn_curve.tres" id="5_hib2s"]
+[ext_resource type="Script" path="res://ExcapeLocation.gd" id="8_coptb"]
+[ext_resource type="Script" path="res://addons/input_prompts/action_prompt/action_prompt.gd" id="9_e661t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vravv"]
 texture = ExtResource("2_pt7bv")
@@ -3366,11 +3368,18 @@ terrain_set_1/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/1 = SubResource("TileSetAtlasSource_vravv")
 sources/2 = SubResource("TileSetAtlasSource_1tymm")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_sjies"]
+radius = 41.7732
+
+[sub_resource type="InputEventKey" id="InputEventKey_1y3di"]
+device = -1
+physical_keycode = 69
+unicode = 101
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_jt5uk")
 
 [node name="TileMap" type="TileMap" parent="."]
-visible = false
 tile_set = SubResource("TileSet_k2ci5")
 format = 2
 layer_0/name = "floor"
@@ -3406,6 +3415,7 @@ position = Vector2(673, 181)
 scale = Vector2(0.1, 0.1)
 
 [node name="GUI" parent="." instance=ExtResource("1_mpskb")]
+visible = false
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
@@ -3415,6 +3425,59 @@ position = Vector2(96, 152)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 300.0
+
+[node name="ExcapeLocation" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("8_coptb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ExcapeLocation"]
+position = Vector2(908, 101)
+shape = SubResource("CircleShape2D_sjies")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExcapeLocation"]
+position = Vector2(104, 44)
+shape = SubResource("CircleShape2D_sjies")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ExcapeLocation"]
+position = Vector2(1064, 100)
+shape = SubResource("CircleShape2D_sjies")
+
+[node name="ActionPrompt" type="TextureRect" parent="ExcapeLocation"]
+offset_right = 19.0
+offset_bottom = 20.0
+stretch_mode = 5
+script = ExtResource("9_e661t")
+action = "interact"
+icon = 0
+events = Array[InputEvent]([SubResource("InputEventKey_1y3di")])
+
+[node name="Area2D1" type="Area2D" parent="ExcapeLocation"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExcapeLocation/Area2D1"]
+position = Vector2(104, 44)
+shape = SubResource("CircleShape2D_sjies")
+
+[node name="Marker2D" type="Marker2D" parent="ExcapeLocation/Area2D1"]
+position = Vector2(118, 40)
+
+[node name="Area2D2" type="Area2D" parent="ExcapeLocation"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExcapeLocation/Area2D2"]
+position = Vector2(908, 101)
+shape = SubResource("CircleShape2D_sjies")
+
+[node name="Marker2D" type="Marker2D" parent="ExcapeLocation/Area2D2"]
+position = Vector2(930, 97)
+
+[node name="Area2D3" type="Area2D" parent="ExcapeLocation"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExcapeLocation/Area2D3"]
+position = Vector2(1064, 100)
+shape = SubResource("CircleShape2D_sjies")
+
+[node name="Marker2D" type="Marker2D" parent="ExcapeLocation/Area2D3"]
+position = Vector2(1090, 97)
 
 [connection signal="game_started" from="GUI" to="." method="_on_game_started"]
 [connection signal="load" from="GUI" to="." method="_on_gui_load"]

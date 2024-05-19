@@ -40,6 +40,7 @@ func _on_main_menu_new_game():
 	timer=get_parent().timer
 	$Timer.show()
 	$ProgressBar.max_value=get_parent().clean_max
+	$ProgressBar.show()
 
 func timer_flash():
 	var timer_label:Timer=$Timer
