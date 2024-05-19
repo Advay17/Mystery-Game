@@ -22,7 +22,7 @@ func play(body_found:bool, percent:float):
 		$Details.text="The police found traces of blood, indicating a struggle, yet they were unable to identify who the murderer was. Still, you are a prime suspect, and shall be facing trial."
 	else:
 		$Details.text="The police could not find a shred of evidence to suggest that anything occured at the house, and by the time they found the body in its hiding place days later, you had already been on a plane to Tahiti."
-	$Percentage.text=str(floor((percent+0.001)/100), "% of the evidence cleaned.")
+	$Percentage.text=str(floor((percent+0.001)*100), "% of the evidence cleaned.")
 	var tween=get_tree().create_tween()
 	modulate=Color(modulate.r, modulate.g, modulate.b, 0)
 	tween.tween_property(self, "modulate", Color(modulate.r, modulate.g, modulate.b, 255), 1)

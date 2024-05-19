@@ -3410,6 +3410,7 @@ layer_4/tile_data = PackedInt32Array(196614, 720898, 17, 2097161, 458754, 15, 20
 [node name="Corpse" parent="TileMap" instance=ExtResource("5_euct4")]
 position = Vector2(392, 348)
 scale = Vector2(0.25, 0.25)
+collision_mask = 5
 motion_mode = 1
 safe_margin = 5.0
 
