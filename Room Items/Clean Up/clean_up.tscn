@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://bhin1y70m1q8g" path="res://Room Items/Clean Up/blood stain.png" id="2_qcmka"]
 [ext_resource type="Script" path="res://addons/input_prompts/action_prompt/action_prompt.gd" id="3_8wdvd"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_3y68w"]
+[sub_resource type="InputEventKey" id="InputEventKey_7fp8y"]
 ctrl_pressed = true
 keycode = 69
 unicode = 69
 
-[sub_resource type="InputEventKey" id="InputEventKey_4wpig"]
+[sub_resource type="InputEventKey" id="InputEventKey_im1an"]
 command_or_control_autoremap = true
 keycode = 4194321
 
@@ -57,7 +57,7 @@ stretch_mode = 5
 script = ExtResource("3_8wdvd")
 action = "ui_text_caret_line_end.macos"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_3y68w"), SubResource("InputEventKey_4wpig")])
+events = Array[InputEvent]([SubResource("InputEventKey_7fp8y"), SubResource("InputEventKey_im1an")])
 
 [node name="ProgressBar" type="ProgressBar" parent="ActionPrompt"]
 visible = false

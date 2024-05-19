@@ -6,7 +6,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_057d2"]
 
-[sub_resource type="InputEventKey" id="InputEventKey_d4sw7"]
+[sub_resource type="InputEventKey" id="InputEventKey_prfho"]
 device = -1
 physical_keycode = 69
 unicode = 101
@@ -37,7 +37,7 @@ stretch_mode = 5
 script = ExtResource("2_dgvr2")
 action = "interact"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_d4sw7")])
+events = Array[InputEvent]([SubResource("InputEventKey_prfho")])
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

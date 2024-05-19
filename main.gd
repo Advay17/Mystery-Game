@@ -54,7 +54,8 @@ func clean(mess):
 func _on_timer_timeout():
 	$TileMap.hide()
 	$GUI.hide()
-	$Player.queue_free()
+	if has_node("Player"):
+		$Player.queue_free()
 	get_tree().call_group("mess", "hide")
 	$DeathScreen.play()
 	pass # Replace with function body.

@@ -3391,7 +3391,7 @@ sources/2 = SubResource("TileSetAtlasSource_1tymm")
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjies"]
 radius = 41.7732
 
-[sub_resource type="InputEventKey" id="InputEventKey_gu4bt"]
+[sub_resource type="InputEventKey" id="InputEventKey_prfho"]
 device = -1
 physical_keycode = 69
 unicode = 101
@@ -3493,7 +3493,7 @@ stretch_mode = 5
 script = ExtResource("9_e661t")
 action = "interact"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_gu4bt")])
+events = Array[InputEvent]([SubResource("InputEventKey_prfho")])
 
 [node name="Area2D1" type="Area2D" parent="EscapeLocation"]
 visible = false
@@ -3643,7 +3643,7 @@ stretch_mode = 5
 script = ExtResource("9_e661t")
 action = "interact"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_gu4bt")])
+events = Array[InputEvent]([SubResource("InputEventKey_prfho")])
 
 [node name="BodyHide2" type="Area2D" parent="." groups=["bh"]]
 position = Vector2(884, 495)
@@ -3666,7 +3666,7 @@ stretch_mode = 5
 script = ExtResource("9_e661t")
 action = "interact"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_gu4bt")])
+events = Array[InputEvent]([SubResource("InputEventKey_prfho")])
 
 [node name="BodyHide3" type="Area2D" parent="." groups=["bh"]]
 z_index = 4
@@ -3690,7 +3690,7 @@ stretch_mode = 5
 script = ExtResource("9_e661t")
 action = "interact"
 icon = 0
-events = Array[InputEvent]([SubResource("InputEventKey_gu4bt")])
+events = Array[InputEvent]([SubResource("InputEventKey_prfho")])
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_tnkyu")
