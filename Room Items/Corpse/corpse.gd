@@ -16,13 +16,16 @@ func _on_area_2d_body_exited(body):
 	pass # Replace with function body.
 func _process(delta):
 	if dragged:
+		$ActionPrompt.hide()
 		if(body_area.has_overlapping_bodies()):
 			velocity=body_area.get_overlapping_bodies()[0].velocity
-			print(get_floor_normal())
-			if !(velocity.x!=0 && is_on_wall() && ((get_wall_normal().x>0 && velocity.x<0) || (get_wall_normal().x<0 && velocity.x>0))) && !(velocity.y!=0 && ((is_on_ceiling() && velocity.y<0 )|| (is_on_floor() && velocity.y>0))):
+			print(is_on_wall())
+			if !is_on_wall() || (!(get_wall_normal().x>0 && velocity.x<0) && !(get_wall_normal().y>0 && velocity.y<0) && !(get_wall_normal().x<0 && velocity.x>0) && !(get_wall_normal().y<0 && velocity.y>0)):
 				move_and_slide()
 		else:
 			dragged=false
+	elif body_area.has_overlapping_bodies():
+		$ActionPrompt.show()
 func _unhandled_input(event):
 	if body_area.has_overlapping_bodies() && event.is_action_pressed("grab"):
 		dragged=!dragged

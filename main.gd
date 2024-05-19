@@ -3,6 +3,7 @@ extends Node2D
 var splatter=preload("res://Room Items/Clean Up/clean_up.tscn")
 var cleaned:float=0
 var clean_max:float=0
+var body_hidden=false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -39,10 +40,10 @@ func _on_game_started():
 	player.scale*=0.25
 	player.position=$Marker2D.position
 	add_child(player)
-	timer.start()
+	timer.start(clean_max)
 
 func time_loss(time:int):
-	timer.time_left-=time
+	timer.start(timer.time_left)
 	$GUI.timer_flash()
 	pass
 
@@ -56,4 +57,13 @@ func _on_timer_timeout():
 	$Player.queue_free()
 	get_tree().call_group("mess", "hide")
 	$DeathScreen.play()
+	pass # Replace with function body.
+
+
+func _on_escaped():
+	$TileMap.hide()
+	$GUI.hide()
+	$Player.queue_free()
+	get_tree().call_group("mess", "hide")
+	$WinScreen.play(!body_hidden, cleaned/clean_max)
 	pass # Replace with function body.

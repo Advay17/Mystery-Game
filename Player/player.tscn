@@ -7,6 +7,7 @@
 z_index = 2
 collision_layer = 2
 collision_mask = 15
+motion_mode = 1
 script = ExtResource("1_jtisb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
